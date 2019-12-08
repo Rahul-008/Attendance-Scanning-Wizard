@@ -1,8 +1,9 @@
-﻿using System;
+﻿using DataLayer.Interfaces;
+using System;
 
 namespace DataLayer.Models.BaseModels
 {
-    public abstract class BaseModel
+    public abstract class BaseModel : IModel
     {
 
         public int Id { get; set; }
@@ -21,6 +22,6 @@ namespace DataLayer.Models.BaseModels
             private set => createdAt = value;
 
         }
-        public abstract void IsVaild();
+        public abstract void IsValid();
     }
 }

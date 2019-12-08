@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <Folder Include="Models\UserModels\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Utils\" />
   </ItemGroup>
 
 </Project>

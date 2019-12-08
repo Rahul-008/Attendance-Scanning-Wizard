@@ -11,28 +11,28 @@ namespace DataLayer.Models
         public int ClassTimed { set; get; }
         public int StartTimeId { set; get; }
         public int EndTimeID { set; get; }
-        public ClassType ClassType { set; get; }
+        public ClassTypes ClassType { set; get; }
         public string RoomNo { set; get; }
         public string QRCode { set; get; }
         public string QRDisplayStartTime { set; get; }
         public string QRDisplayEndTime { set; get; }
         public int SectionID { set; get; }
 
-        public override void IsVaild()
+        public override void IsValid()
         {
             if (DateTime.Parse(ClassDate) < DateTime.Today)
             {
                 throw new Exception("Class date cannot be set in the past");
             }
-            if (!(ClassType == ClassTypes.Lab || ClassType == ClassTypes.theory))
+            if (!(ClassType == ClassTypes.Lab || ClassType == ClassTypes.Theory))
             {
                 throw new Exception("Invaild class type");
             }
-            if (StartTimedID > EndTimeID)
+            if (StartTimeId > EndTimeID)
             {
                 throw new Exception("Starting time cannot be after ending time");
             }
-            if (EndTimeID - StartTimeID < 2)
+            if (EndTimeID - StartTimeId < 2)
             {
                 throw new Exception("Class length cannot be shorter than an hour");
             }

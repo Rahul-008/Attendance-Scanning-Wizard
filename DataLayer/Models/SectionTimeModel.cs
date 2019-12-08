@@ -9,12 +9,12 @@ namespace DataLayer.Models
     {
         public int StartTimeID { get; set; }
         public int EndTimeID { get; set; }
-        public CLassTypes ClassType { get; set; }
+        public ClassTypes ClassType { get; set; }
         public string RoomNo { get; set; }
         public int SectionID { get; set; }
         public int WeekDayID { get; set; }
 
-        public override void IsVaild()
+        public override void IsValid()
         {
             if (!(ClassType == ClassTypes.Lab || ClassType == ClassTypes.Theory))
             {
