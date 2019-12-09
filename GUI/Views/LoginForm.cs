@@ -1,29 +1,17 @@
-﻿using DataLayer.Models;
-using DataLayer.Models.BaseModels;
-using DataLayer.Models.UserModels;
+﻿using DataLayer.Models.UserModels;
+using GUI.Utils;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace GUI.Views
 {
-    public partial class FormLogin : Form
+    public partial class LoginForm : Form
     {
-        public FormLogin()
+        public LoginForm()
         {
             InitializeComponent();
             this.ActiveControl = textBoxEmail;
-
-        }
-
-        private void SplitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -33,12 +21,23 @@ namespace GUI.Views
 
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            if (!(textBoxEmail.Text == "Email") && !(textBoxPassword.Text == "Password"))
+            if (!(textBoxEmail.Text == "Email") && !(textBoxPassword.Text == "Password") && !(string.IsNullOrWhiteSpace(textBoxEmail.Text)) && !(string.IsNullOrWhiteSpace(textBoxPassword.Text)))
             {
+                LoadingForm loadingForm = new LoadingForm();
+                loadingForm.Show();
                 
+                try
+                {
+                    
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                loadingForm.Close();
             }
             else
-                MessageBox.Show("Please insert your login credentials first");
+            MessageBox.Show("Please insert your login credentials first");
             
         }
 
@@ -75,17 +74,12 @@ namespace GUI.Views
                 timerLoginPanelSliderReverse.Stop();
         }
 
-        private void TextBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void TextBoxPassword_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(textBoxPassword.Text) || textBoxPassword.Text == "Password")
             {
                 textBoxPassword.Clear();
-                textBoxPassword.ForeColor = System.Drawing.Color.FromArgb(217, 217, 217);
+                textBoxPassword.ForeColor = Color.FromArgb(217, 217, 217);
                 textBoxPassword.UseSystemPasswordChar = true;
             }
             panelPasswordUnderline.BackColor = Color.FromArgb(217, 217, 217);
@@ -103,10 +97,11 @@ namespace GUI.Views
 
         private void TextBoxIdSignUp_Click(object sender, EventArgs e)
         {
+            toolTipWarning.Show("Faculty ID format: XXXX-XXXX-X\nWarning: You cannot change your Academic ID in the future.", textBoxAcademicIdSignUp, 5000);
             if (textBoxAcademicIdSignUp.Text == "Academic ID")
             {
                 textBoxAcademicIdSignUp.Clear();
-                textBoxAcademicIdSignUp.ForeColor = System.Drawing.Color.FromArgb(217, 217, 217);
+                textBoxAcademicIdSignUp.ForeColor = Color.FromArgb(217, 217, 217);
             }
             panelIdSignUpUnderline.BackColor = Color.FromArgb(217, 217, 217);
         }
@@ -123,6 +118,7 @@ namespace GUI.Views
 
         private void TextBoxEmailSignup_Click(object sender, EventArgs e)
         {
+            toolTipEmail.Show("Faculty must sign up with an aiub.edu email", textBoxEmailSignup, 5000);
             if (textBoxEmailSignup.Text == "Academic Email")
             {
                 textBoxEmailSignup.Clear();
@@ -133,6 +129,7 @@ namespace GUI.Views
 
         private void TextBoxPassSignUp_Click(object sender, EventArgs e)
         {
+            toolTipPass.Show("Password minimum length is 6 and must contain at least one uppercase, lowercase and digit characters", textBoxPassSignUp, 5000);
             if (textBoxPassSignUp.Text == "Password")
             {
                 textBoxPassSignUp.Clear();
@@ -176,6 +173,7 @@ namespace GUI.Views
 
         private void TextBoxIdSignUp_Leave(object sender, EventArgs e)
         {
+            toolTipWarning.Hide(textBoxAcademicIdSignUp);
             if (String.IsNullOrWhiteSpace(textBoxAcademicIdSignUp.Text))
             {
                 textBoxAcademicIdSignUp.ForeColor = Color.FromArgb(112, 112, 112);
@@ -196,6 +194,7 @@ namespace GUI.Views
 
         private void TextBoxEmailSignup_Leave(object sender, EventArgs e)
         {
+            toolTipEmail.Hide(textBoxEmailSignup);
             if (String.IsNullOrWhiteSpace(textBoxEmailSignup.Text))
             {
                 textBoxEmailSignup.ForeColor = Color.FromArgb(112, 112, 112);
@@ -206,6 +205,7 @@ namespace GUI.Views
 
         private void TextBoxPassSignUp_Leave(object sender, EventArgs e)
         {
+            toolTipPass.Hide(textBoxPassSignUp);
             if (String.IsNullOrWhiteSpace(textBoxPassSignUp.Text))
             {
                 textBoxPassSignUp.ForeColor = Color.FromArgb(112, 112, 112);
@@ -278,33 +278,42 @@ namespace GUI.Views
             {
                 if (textBoxPassSignUp.Text == textBoxConfirmPassSignUp.Text)
                 {
-                    //MessageBox.Show("Sign up pressed");
+                    LoadingForm loading = new LoadingForm();
+                    loading.Show();
                     FacultyUserModel faculty = new FacultyUserModel();
                     faculty.AcademicId = textBoxAcademicIdSignUp.Text;
-                    faculty.FirstName = textBoxFirstNameSignUp.Text;
-                    faculty.LastName = textBoxLastNameSignUp.Text;
-                    faculty.Email = textBoxEmailSignup.Text;
+                    faculty.FirstName = textBoxFirstNameSignUp.Text.Trim();
+                    faculty.LastName = textBoxLastNameSignUp.Text.Trim();
+                    faculty.Email = textBoxEmailSignup.Text.ToLower().Trim();
                     faculty.Password = textBoxPassSignUp.Text;
-                    //faculty.CreatedAt = 
-                    //faculty.CreatedAt = DateTime.Now;
 
                     try
                     {
                         faculty.IsValid();
+                        loading.Step(20);
+                        //hashing now
+                        Argon2Hashing hashing = new Argon2Hashing();
+                        faculty.salt = Convert.ToBase64String(hashing.CreateSalt());
+                        faculty.Password = Convert.ToBase64String(hashing.HashPassword(textBoxPassSignUp.Text, Convert.FromBase64String(faculty.salt)));
+                        loading.Step(20);
+                        //hashing done
+                        //Console.WriteLine("Salt: " + faculty.salt);
+                        //Console.WriteLine("Hashed password: " + faculty.Password);
+                        //Console.WriteLine("Verify hash: " + hashing.VerifyHash(textBoxPassSignUp.Text, Convert.FromBase64String(faculty.salt), Convert.FromBase64String(faculty.Password)));
+                        loading.Step(20);
+                        try
+                        {
+                            
+                        }
+                        catch(Exception ex)
+                        {
+                            loading.Close();
+                            MessageBox.Show(ex.Message);
+                        }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
-                    }
-
-                    MessageBox.Show("Data accepted");
-
-                    try
-                    {
-                        
-                    }
-                    catch(Exception ex)
-                    {
+                        loading.Close();
                         MessageBox.Show(ex.Message);
                     }
                 }
@@ -325,7 +334,7 @@ namespace GUI.Views
             MessageBox.Show("A 5 digit code has been sent to your email. Press OK and enter the code");
         }
 
-        private void TextBoxIdSignUp_TextChanged_1(object sender, EventArgs e)
+        private void TextBoxIdSignUp_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -382,6 +391,30 @@ namespace GUI.Views
             {
                 buttonLogin.PerformClick();
             }
+        }
+
+        private void textBoxAcademicIdSignUp_MouseHover(object sender, EventArgs e)
+        {
+            toolTipWarning.Show("Faculty ID format: XXXX-XXXX-X\nWarning: You cannot change your Academic ID in the future.", textBoxAcademicIdSignUp, 5000);
+        }
+
+        private void textBoxEmailSignup_MouseHover(object sender, EventArgs e)
+        {
+            toolTipEmail.Show("Faculty must sign up with an aiub.edu email", textBoxEmailSignup, 5000);
+        }
+
+        private void textBoxAcademicIdSignUp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == '-' || char.IsControl(e.KeyChar)))
+            {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void textBoxPassSignUp_MouseHover(object sender, EventArgs e)
+        {
+            toolTipPass.Show("Password minimum length is 6 and must contain at least one uppercase, lowercase and digit characters", textBoxPassSignUp, 5000);
         }
     }
 }

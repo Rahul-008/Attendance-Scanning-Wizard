@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\BaseDataAccess\BaseDataAccess.cs" />
+    <Compile Include="DataAccess\UserDataAccess.cs" />
     <Compile Include="DBConnections\SQLiteDBConnection.cs" />
     <Compile Include="Interfaces\IBaseDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

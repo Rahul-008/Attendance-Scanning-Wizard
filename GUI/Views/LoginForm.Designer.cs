@@ -2,7 +2,7 @@
 
 namespace GUI.Views
 {
-    partial class FormLogin
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace GUI.Views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panelLogin = new System.Windows.Forms.Panel();
             this.panelSignUp = new System.Windows.Forms.Panel();
             this.textBoxConfirmPassSignUp = new System.Windows.Forms.TextBox();
@@ -64,6 +64,8 @@ namespace GUI.Views
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.panelEmailUnderline = new System.Windows.Forms.Panel();
             this.labelLogin = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelSubtitle = new System.Windows.Forms.Label();
             this.panelTitle = new System.Windows.Forms.Panel();
@@ -71,13 +73,14 @@ namespace GUI.Views
             this.timerLoginPanelSliderReverse = new System.Windows.Forms.Timer(this.components);
             this.timerResetPasswordSlider = new System.Windows.Forms.Timer(this.components);
             this.timerResetPasswordSliderReverse = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolTipWarning = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipPass = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipEmail = new System.Windows.Forms.ToolTip(this.components);
             this.panelLogin.SuspendLayout();
             this.panelSignUp.SuspendLayout();
             this.panelResetPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelLogin
@@ -103,7 +106,6 @@ namespace GUI.Views
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(350, 518);
             this.panelLogin.TabIndex = 0;
-            this.panelLogin.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // panelSignUp
             // 
@@ -171,6 +173,7 @@ namespace GUI.Views
             this.textBoxPassSignUp.Click += new System.EventHandler(this.TextBoxPassSignUp_Click);
             this.textBoxPassSignUp.Enter += new System.EventHandler(this.TextBoxPassSignUp_Click);
             this.textBoxPassSignUp.Leave += new System.EventHandler(this.TextBoxPassSignUp_Leave);
+            this.textBoxPassSignUp.MouseHover += new System.EventHandler(this.textBoxPassSignUp_MouseHover);
             // 
             // panelPassSignUpUnderline
             // 
@@ -198,6 +201,7 @@ namespace GUI.Views
             this.textBoxEmailSignup.Click += new System.EventHandler(this.TextBoxEmailSignup_Click);
             this.textBoxEmailSignup.Enter += new System.EventHandler(this.TextBoxEmailSignup_Click);
             this.textBoxEmailSignup.Leave += new System.EventHandler(this.TextBoxEmailSignup_Leave);
+            this.textBoxEmailSignup.MouseHover += new System.EventHandler(this.textBoxEmailSignup_MouseHover);
             // 
             // panelEmailSignUpUnderline
             // 
@@ -315,9 +319,11 @@ namespace GUI.Views
             this.textBoxAcademicIdSignUp.TabIndex = 24;
             this.textBoxAcademicIdSignUp.Text = "Academic ID";
             this.textBoxAcademicIdSignUp.Click += new System.EventHandler(this.TextBoxIdSignUp_Click);
-            this.textBoxAcademicIdSignUp.TextChanged += new System.EventHandler(this.TextBoxIdSignUp_TextChanged_1);
+            this.textBoxAcademicIdSignUp.TextChanged += new System.EventHandler(this.TextBoxIdSignUp_TextChanged);
             this.textBoxAcademicIdSignUp.Enter += new System.EventHandler(this.TextBoxIdSignUp_Click);
+            this.textBoxAcademicIdSignUp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAcademicIdSignUp_KeyPress);
             this.textBoxAcademicIdSignUp.Leave += new System.EventHandler(this.TextBoxIdSignUp_Leave);
+            this.textBoxAcademicIdSignUp.MouseHover += new System.EventHandler(this.textBoxAcademicIdSignUp_MouseHover);
             // 
             // panelIdSignUpUnderline
             // 
@@ -509,7 +515,6 @@ namespace GUI.Views
             this.textBoxPassword.TabIndex = 4;
             this.textBoxPassword.Text = "Password";
             this.textBoxPassword.Click += new System.EventHandler(this.TextBoxPassword_Click);
-            this.textBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             this.textBoxPassword.Enter += new System.EventHandler(this.TextBoxPassword_Click);
             this.textBoxPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxPassword_KeyDown);
             this.textBoxPassword.Leave += new System.EventHandler(this.TextBoxPassword_Leave);
@@ -564,6 +569,26 @@ namespace GUI.Views
             this.labelLogin.TabIndex = 0;
             this.labelLogin.Text = "Login";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(23, 214);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(23, 176);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(27, 27);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // labelTitle
             // 
             this.labelTitle.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -617,27 +642,25 @@ namespace GUI.Views
             this.timerResetPasswordSliderReverse.Interval = 1;
             this.timerResetPasswordSliderReverse.Tick += new System.EventHandler(this.TimerResetPasswordSliderReverse_Tick);
             // 
-            // pictureBox1
+            // toolTipWarning
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(23, 176);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
+            this.toolTipWarning.AutoPopDelay = 5000;
+            this.toolTipWarning.InitialDelay = 0;
+            this.toolTipWarning.ReshowDelay = 100;
             // 
-            // pictureBox2
+            // toolTipPass
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(23, 214);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(27, 27);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 24;
-            this.pictureBox2.TabStop = false;
+            this.toolTipPass.AutomaticDelay = 5000;
+            this.toolTipPass.ShowAlways = true;
             // 
-            // FormLogin
+            // toolTipEmail
+            // 
+            this.toolTipEmail.AutoPopDelay = 5000;
+            this.toolTipEmail.InitialDelay = 0;
+            this.toolTipEmail.ReshowDelay = 100;
+            this.toolTipEmail.ShowAlways = true;
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -651,8 +674,8 @@ namespace GUI.Views
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(880, 550);
-            this.Name = "FormLogin";
+            this.MinimumSize = new System.Drawing.Size(878, 547);
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Attendance Scanning Wizard";
             this.Load += new System.EventHandler(this.FormLogin_Load);
@@ -662,8 +685,8 @@ namespace GUI.Views
             this.panelSignUp.PerformLayout();
             this.panelResetPassword.ResumeLayout(false);
             this.panelResetPassword.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -712,6 +735,9 @@ namespace GUI.Views
         private System.Windows.Forms.Label labelSignUp;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.ToolTip toolTipWarning;
+        private System.Windows.Forms.ToolTip toolTipPass;
+        private System.Windows.Forms.ToolTip toolTipEmail;
     }
 }
 

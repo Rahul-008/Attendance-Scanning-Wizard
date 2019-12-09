@@ -117,44 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAFoSURBVFhH7ZexasMwEED7SR4SSCGUQAPN0CFDCsFD8BCC
-        CYamFDr051We4UAOZ/ckGZRBwyPBdzo9H4oUPVVV5R6ZIphKEUylCKYym+Bm8zpAy4khSXC1enbH48l1
-        3Y+73X4H8IwYOdpYK9GCu927KnYPOeRqNSxECTKhL7Dffww6xXee+S8QKxksyPqSSc/nzi0WSzUPiJEj
-        +TFrM1iwbb/6yfickhPI8cdoOVMECW63b1Hd8LtODS1njCBB1lVsJ6SL1NDiYwQJNk3bT3I41Gp8CsYw
-        lhpafAyzoL+t0A0mCkE6GLrtmATX65e++JxQU5vrHpOgv8hZQylIHeuPLFhQi4dQBLW4YNm4swkid7l8
-        urpu1LiQTZC/VpIztY1ITpYOEr9ev9W4kE0QiLMpazEhqyCnxEMLcjr8d0JkFbRQBOdiVkEuQf4FKBVq
-        Wa+jJkGgIG89B1Y5MAvmogimUgRTKYJpVO4P0PVhrgRjNK4AAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAFBSURBVFhH7ZZBawIxEEb7k/Zgb1IExVrYgwULIlLEeljK
-        gnop6J+PvEAkamKs0wShc3ioycyXR4xZn6qqMo+MCkpRQSkqKEUFpUQFh8M3s9nsi8BaIQeICk4ms2BY
-        Dlgr5ABRwfH4wzav1zv72rY/ZjSqg7W/gQyy/GzWCtVCUnC5/DarVWvfp8JSuEwgk+xUZlJwsWhMp/Ns
-        ptPPY/h8/mXHQn0hqKXH9ZPFGNl8FguejwE70O2+nPSEoCb2Dfy5IAwGr8czxGuv1z+Z92HOr6XXn88i
-        COe7UtfvFzWMufnYbmcTBP8MAefKzfnnlZrYec0q6PDvS3bK39lr9xsUEQTuNifluOXOLCYInLGm2Vpu
-        +XVDUcF7UEEpKihFBaX8D8ES3CXI08D9VcoJa1x78kQFHwUVlKKCUlRQigrKqMwB3BuCHZR7gzkAAAAA
-        SUVORK5CYII=
-</value>
-  </data>
-  <metadata name="timerLoginPanelSlider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="timerLoginPanelSliderReverse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>188, 17</value>
-  </metadata>
-  <metadata name="timerResetPasswordSlider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>401, 17</value>
-  </metadata>
-  <metadata name="timerResetPasswordSliderReverse.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>593, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
 </root>
