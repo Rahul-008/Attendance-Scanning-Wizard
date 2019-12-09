@@ -7,7 +7,7 @@ namespace DataLayer.Models
     {
         public string ClassTimeText { get; set; }
 
-        public override void IsVaild()
+        public override void IsValid()
         {
             throw new NotImplementedException();
         }
