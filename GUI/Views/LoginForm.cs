@@ -416,5 +416,10 @@ namespace GUI.Views
         {
             toolTipPass.Show("Password minimum length is 6 and must contain at least one uppercase, lowercase and digit characters", textBoxPassSignUp, 5000);
         }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
