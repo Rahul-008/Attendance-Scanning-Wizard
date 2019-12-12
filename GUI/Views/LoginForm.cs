@@ -46,7 +46,11 @@ namespace GUI.Views
                         {
                             loadingForm.Step(60);
                             loadingForm.Close();
-                            
+
+                            var dash = new FormDashboard(faculty);
+                            dash.FormClosed += new FormClosedEventHandler(dash_FormClosed);
+                            dash.Show();
+                            this.Hide();
                         }
                         else
                         {
