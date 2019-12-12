@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using DataAccessLayer.DBConnections;
+using DataLayer.Models;
 using DataLayer.Models.BaseModels;
 using DataLayer.Models.UserModels;
 using System;
@@ -47,6 +48,17 @@ namespace DataAccessLayer
                     MessageBox.Show("Incorrect email or password. Please try again");
                 }
                 return faculty;
+            }
+        }
+
+        public StudentUserModel GetByAcademicId(string AcademicId)
+        {
+            using (IDbConnection conn = SQLiteDBConnection.Get())
+            {
+                var query = @"SELECT * FROM Users where AcademicId = @AcademicId;";
+                DynamicParameters parameters = new DynamicParameters();
+                parameters.Add("@AcademicId", AcademicId);
+                return conn.QuerySingle<StudentUserModel>(query, parameters);
             }
         }
     }

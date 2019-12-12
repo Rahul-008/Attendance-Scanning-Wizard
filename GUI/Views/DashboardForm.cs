@@ -32,7 +32,10 @@ namespace GUI.Views
 
         private void ButtonYourSections_Click(object sender, EventArgs e)
         {
-            
+            var yourSections = new YourSectionsForm(faculty);
+            yourSections.FormClosed += new FormClosedEventHandler(dash_FormClosed);
+            yourSections.Show();
+            this.Hide();
         }
 
         private void ButtonYourClasses_Click(object sender, EventArgs e)
@@ -41,7 +44,10 @@ namespace GUI.Views
         }
         private void ButtonAddSection_Click(object sender, EventArgs e)
         {
-            
+            var addSection = new FormAddSection(faculty);
+            addSection.FormClosed += new FormClosedEventHandler(dash_FormClosed);
+            addSection.Show();
+            this.Hide();
         }
 
         private void ButtonAddClass_Click(object sender, EventArgs e)

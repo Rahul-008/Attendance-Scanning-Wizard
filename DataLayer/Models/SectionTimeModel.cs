@@ -7,12 +7,12 @@ namespace DataLayer.Models
 {
     public class SectionTimeModel : BaseModel
     {
-        public int StartTimeID { get; set; }
-        public int EndTimeID { get; set; }
+        public int StartTimeId { get; set; }
+        public int EndTimeId { get; set; }
         public ClassTypes ClassType { get; set; }
         public string RoomNo { get; set; }
-        public int SectionID { get; set; }
-        public int WeekDayID { get; set; }
+        public int SectionId { get; set; }
+        public int WeekDayId { get; set; }
 
         public override void IsValid()
         {
@@ -20,11 +20,11 @@ namespace DataLayer.Models
             {
                 throw new Exception("Invaild class type");
             }
-            if (StartTimeID > EndTimeID)
+            if (StartTimeId > EndTimeId)
             {
                 throw new Exception("Starting time cannot be after ending time");
             }
-            if (EndTimeID - StartTimeID < 2)
+            if (EndTimeId - StartTimeId < 2)
             {
                 throw new Exception("Class length cannot be shorter than an hour");
             }

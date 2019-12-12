@@ -14,5 +14,10 @@ namespace GUI.Controllers
         {
             return DataAccess.GetByEmail(email);
         }
+
+        public StudentUserModel GetByAcademicId(string AcademicId)
+        {
+            return DataAccess.GetByAcademicId(AcademicId);
+        }
     }
 }

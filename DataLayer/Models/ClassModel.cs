@@ -16,7 +16,7 @@ namespace DataLayer.Models
         public string QRCode { set; get; }
         public string QRDisplayStartTime { set; get; }
         public string QRDisplayEndTime { set; get; }
-        public int SectionID { set; get; }
+        public int SectionId { set; get; }
 
         public override void IsValid()
         {

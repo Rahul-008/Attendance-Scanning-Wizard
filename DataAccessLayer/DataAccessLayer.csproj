@@ -76,7 +76,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataAccess\BaseDataAccess\BaseDataAccess.cs" />
+    <Compile Include="DataAccess\BaseDataAccess\SectionTimeDataAccess.cs" />
+    <Compile Include="DataAccess\ClassDataAccess.cs" />
+    <Compile Include="DataAccess\ClassTimeDataAccess.cs" />
+    <Compile Include="DataAccess\SectionDataAccess.cs" />
+    <Compile Include="DataAccess\SectionStudentDataAccess.cs" />
     <Compile Include="DataAccess\UserDataAccess.cs" />
+    <Compile Include="DataAccess\WeekDayDataAccess.cs" />
     <Compile Include="DBConnections\SQLiteDBConnection.cs" />
     <Compile Include="Interfaces\IBaseDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
