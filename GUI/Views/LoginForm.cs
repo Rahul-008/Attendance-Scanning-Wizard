@@ -1,4 +1,5 @@
 ﻿using DataLayer.Models.UserModels;
+using GUI.Controllers;
 using GUI.Utils;
 using System;
 using System.Drawing;
@@ -25,10 +26,33 @@ namespace GUI.Views
             {
                 LoadingForm loadingForm = new LoadingForm();
                 loadingForm.Show();
-                
+
+                loadingForm.Step(20);
+                var controller = new UserController();
+                Argon2Hashing hashing = new Argon2Hashing();
+
                 try
                 {
-                    
+                    FacultyUserModel faculty = controller.GetByEmail(textBoxEmail.Text);
+                    if (faculty == null)
+                    {
+                        textBoxPassword.Clear();
+                        textBoxPassword.Focus();
+                    }
+                    else
+                    {
+                        loadingForm.Step(20);
+                        if (hashing.VerifyHash(textBoxPassword.Text, Convert.FromBase64String(faculty.salt), Convert.FromBase64String(faculty.Password)))
+                        {
+                            loadingForm.Step(60);
+                            loadingForm.Close();
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect email or password. Please try again");
+                        }
+                    }
                 }
                 catch(Exception ex)
                 {
@@ -287,7 +311,7 @@ namespace GUI.Views
                     faculty.Email = textBoxEmailSignup.Text.ToLower().Trim();
                     faculty.Password = textBoxPassSignUp.Text;
 
-                    try
+                    //try
                     {
                         faculty.IsValid();
                         loading.Step(20);
@@ -300,22 +324,27 @@ namespace GUI.Views
                         //Console.WriteLine("Salt: " + faculty.salt);
                         //Console.WriteLine("Hashed password: " + faculty.Password);
                         //Console.WriteLine("Verify hash: " + hashing.VerifyHash(textBoxPassSignUp.Text, Convert.FromBase64String(faculty.salt), Convert.FromBase64String(faculty.Password)));
-                        loading.Step(20);
-                        try
+                        
+                        //try
                         {
-                            
-                        }
-                        catch(Exception ex)
-                        {
+                            var controller = new UserController();
+                            controller.Create(faculty);
+                            loading.Step(20);
                             loading.Close();
-                            MessageBox.Show(ex.Message);
+                            MessageBox.Show("Account created. Please login with your email and password");
+                            buttonCancel.PerformClick();
                         }
+                        //catch(Exception ex)
+                        //{
+                        //    loading.Close();
+                        //    MessageBox.Show(ex.Message);
+                        //}
                     }
-                    catch (Exception ex)
-                    {
-                        loading.Close();
-                        MessageBox.Show(ex.Message);
-                    }
+                    //catch (Exception ex)
+                    //{
+                    //    loading.Close();
+                    //    MessageBox.Show(ex.Message);
+                    //}
                 }
                 else
                 {

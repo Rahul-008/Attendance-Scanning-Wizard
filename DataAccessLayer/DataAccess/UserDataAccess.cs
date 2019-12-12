@@ -1,11 +1,9 @@
 ﻿using Dapper;
 using DataAccessLayer.DBConnections;
-using DataLayer.Models;
 using DataLayer.Models.BaseModels;
+using DataLayer.Models.UserModels;
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace DataAccessLayer
@@ -17,7 +15,7 @@ namespace DataAccessLayer
         {
             using (IDbConnection conn = SQLiteDBConnection.Get())
             {
-                var query = @"INSERT INTO {TableName} (AcademicId, FirstName, LastName, Email, Password, Salt, CreatedAt, UserType) 
+                var query = @"INSERT INTO Users (AcademicId, FirstName, LastName, Email, Password, Salt, CreatedAt, UserType) 
                                 VALUES(@AcademicId, @FirstName, @LastName, @Email, @Password, @Salt, @CreatedAt, @UserType);
                             SELECT last_insert_rowid();";
                 var newId = conn.ExecuteScalar<int>(query, model);
@@ -30,6 +28,26 @@ namespace DataAccessLayer
         public override BaseUserModel Update(BaseUserModel model)
         {
             throw new NotImplementedException();
+        }
+
+        public FacultyUserModel GetByEmail(string email)
+        {
+            FacultyUserModel faculty = null;
+            using (IDbConnection conn = SQLiteDBConnection.Get())
+            {
+                var query = @"SELECT * FROM Users WHERE Email = @Email;";
+                var parameters = new DynamicParameters();
+                parameters.Add("@Email", email);
+                try
+                {
+                    faculty = conn.QuerySingle<FacultyUserModel>(query, parameters);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Incorrect email or password. Please try again");
+                }
+                return faculty;
+            }
         }
     }
 }
