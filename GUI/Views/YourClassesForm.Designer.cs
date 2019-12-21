@@ -177,6 +177,7 @@
             this.buttonRefresh.TabIndex = 8;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.UseVisualStyleBackColor = false;
+            this.buttonRefresh.Click += new System.EventHandler(this.ButtonRefresh_Click);
             // 
             // buttonAddClass
             // 
@@ -193,6 +194,7 @@
             this.buttonAddClass.TabIndex = 7;
             this.buttonAddClass.Text = "Add Class";
             this.buttonAddClass.UseVisualStyleBackColor = false;
+            this.buttonAddClass.Click += new System.EventHandler(this.ButtonAddClass_Click);
             // 
             // buttonLogin
             // 
@@ -209,6 +211,7 @@
             this.buttonLogin.TabIndex = 6;
             this.buttonLogin.Text = "View All";
             this.buttonLogin.UseVisualStyleBackColor = false;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // buttonBack
             // 

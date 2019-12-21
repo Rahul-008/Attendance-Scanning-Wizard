@@ -1,4 +1,5 @@
 ﻿using DataLayer.Models;
+using DataLayer.Models.BaseModels;
 using DataLayer.Models.UserModels;
 using GUI.Controllers;
 using GUI.Properties;
@@ -47,7 +48,10 @@ namespace GUI.Views
 
         private void ButtonYourClasses_Click(object sender, EventArgs e)
         {
-            
+            var yourClasses = new YourClassesForm(faculty);
+            yourClasses.FormClosed += new FormClosedEventHandler(dash_FormClosed);
+            yourClasses.Show();
+            this.Hide();
         }
         private void ButtonAddSection_Click(object sender, EventArgs e)
         {
@@ -72,7 +76,7 @@ namespace GUI.Views
 
         private void LabelWelcome_Click(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void FormDashboard_Load(object sender, EventArgs e)

@@ -206,6 +206,7 @@
             this.dataGridViewClassList.Size = new System.Drawing.Size(773, 458);
             this.dataGridViewClassList.StandardTab = true;
             this.dataGridViewClassList.TabIndex = 14;
+            this.dataGridViewClassList.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewClassList_MouseClick);
             // 
             // SectionName
             // 
