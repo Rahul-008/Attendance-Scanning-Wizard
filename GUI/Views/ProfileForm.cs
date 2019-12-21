@@ -44,7 +44,63 @@ namespace GUI.Views
 
         }
 
-        
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            var pass = new ChangePasswordForm(faculty);
+            pass.FormClosed += new FormClosedEventHandler(dash_FormClosed);
+            pass.ShowDialog();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxFirstName.Text) && !string.IsNullOrWhiteSpace(textBoxLastName.Text) && !string.IsNullOrWhiteSpace(textBoxEmail.Text))
+            {
+                FacultyUserModel updatedModel = new FacultyUserModel();
+                updatedModel.AcademicId = faculty.AcademicId;
+                updatedModel.FirstName = textBoxFirstName.Text.Trim();
+                updatedModel.LastName = textBoxLastName.Text.Trim();
+                updatedModel.Email = textBoxEmail.Text.ToLower().Trim();
+                updatedModel.Id = faculty.Id;
+                updatedModel.Password = faculty.Password;
+
+                try
+                {
+                    updatedModel.IsValid();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                if (MessageBox.Show("Save changes?", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    try
+                    {
+                        var controller = new UserController();
+                        faculty = controller.Update(updatedModel);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill up all fields");
+            }
+
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Reset all fields?", "Confirmation", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                textBoxFirstName.Text = faculty.FirstName;
+                textBoxLastName.Text = faculty.LastName;
+                textBoxEmail.Text = faculty.Email;
+            }
+        }
 
         private void ProfileForm_Load(object sender, EventArgs e)
         {

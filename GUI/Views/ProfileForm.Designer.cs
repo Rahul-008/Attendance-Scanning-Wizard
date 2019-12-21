@@ -243,6 +243,7 @@
             this.buttonReset.TabIndex = 21;
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // buttonSave
             // 
@@ -260,6 +261,7 @@
             this.buttonSave.TabIndex = 20;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonChange
             // 
@@ -277,6 +279,7 @@
             this.buttonChange.TabIndex = 12;
             this.buttonChange.Text = "Change";
             this.buttonChange.UseVisualStyleBackColor = false;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
             // labelPassword
             // 

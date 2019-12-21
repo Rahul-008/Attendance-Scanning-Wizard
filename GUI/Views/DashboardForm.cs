@@ -79,7 +79,10 @@ namespace GUI.Views
 
         private void LabelWelcome_Click(object sender, EventArgs e)
         {
-            
+            var profile = new ProfileForm(faculty);
+            profile.FormClosed += new FormClosedEventHandler(dash_FormClosed);
+            profile.Show();
+            this.Hide();
         }
 
         private void FormDashboard_Load(object sender, EventArgs e)
