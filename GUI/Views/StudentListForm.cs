@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 
 namespace GUI.Views
@@ -624,17 +626,6 @@ namespace GUI.Views
             public string AcademicId { get; set; }
             public string FullName { get; set; }
             public List<int> attendances { get; set; } = new List<int>();
-        }
-
-        private void ButtonAddStudent_Click_1(object sender, EventArgs e)
-        {
-            var addStudent = new AddStudentForm(faculty, section);
-            addStudent.FormClosed += new FormClosedEventHandler(dash_FormClosed);
-            addStudent.ShowDialog();
-            this.Hide();
-
-            dataGridViewStudentList.Update();
-            dataGridViewStudentList.Refresh();
         }
     }
 }

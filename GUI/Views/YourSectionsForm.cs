@@ -13,8 +13,6 @@ namespace GUI.Views
     public partial class YourSectionsForm : Form
     {
         FacultyUserModel faculty = new FacultyUserModel();
-        private FacultyUserModel faculty1;
-
         public YourSectionsForm(FacultyUserModel gotFaculty)
         {
             InitializeComponent();

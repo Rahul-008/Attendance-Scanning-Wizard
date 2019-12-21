@@ -39,7 +39,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStudentList));
             this.panelLeft = new System.Windows.Forms.Panel();
-            this.flowTodaysClass = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelTodaysClasses = new System.Windows.Forms.Label();
             this.labelSubtitle = new System.Windows.Forms.Label();
@@ -48,16 +47,16 @@
             this.dataGridViewStudentList = new System.Windows.Forms.DataGridView();
             this.dataGridViewSln = new System.Windows.Forms.DataGridView();
             this.panelYourSections = new System.Windows.Forms.Panel();
-            this.buttonInfo = new System.Windows.Forms.Button();
-            this.buttonRefresh = new System.Windows.Forms.Button();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.panelSearchBG = new System.Windows.Forms.Panel();
-            this.buttonBack = new System.Windows.Forms.Button();
             this.labelStudents = new System.Windows.Forms.Label();
             this.buttonSearh = new System.Windows.Forms.Button();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.toolTipInfo = new System.Windows.Forms.ToolTip(this.components);
-            this.buttonAddStudent = new System.Windows.Forms.Button();
+            this.flowTodaysClass = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonInfo = new System.Windows.Forms.Button();
+            this.buttonRefresh = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -76,28 +75,18 @@
             this.panelLeft.Controls.Add(this.labelSubtitle);
             this.panelLeft.Controls.Add(this.labelTitle);
             this.panelLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelLeft.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new System.Drawing.Size(333, 628);
+            this.panelLeft.Size = new System.Drawing.Size(250, 510);
             this.panelLeft.TabIndex = 7;
-            // 
-            // flowTodaysClass
-            // 
-            this.flowTodaysClass.AutoScroll = true;
-            this.flowTodaysClass.Location = new System.Drawing.Point(0, 231);
-            this.flowTodaysClass.Margin = new System.Windows.Forms.Padding(0);
-            this.flowTodaysClass.Name = "flowTodaysClass";
-            this.flowTodaysClass.Size = new System.Drawing.Size(333, 396);
-            this.flowTodaysClass.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.panel2.Controls.Add(this.labelTodaysClasses);
-            this.panel2.Location = new System.Drawing.Point(0, 170);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0, 37, 0, 0);
+            this.panel2.Location = new System.Drawing.Point(0, 138);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(333, 62);
+            this.panel2.Size = new System.Drawing.Size(250, 50);
             this.panel2.TabIndex = 4;
             // 
             // labelTodaysClasses
@@ -105,10 +94,9 @@
             this.labelTodaysClasses.AutoSize = true;
             this.labelTodaysClasses.Font = new System.Drawing.Font("Arial", 13F);
             this.labelTodaysClasses.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.labelTodaysClasses.Location = new System.Drawing.Point(16, 18);
-            this.labelTodaysClasses.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTodaysClasses.Location = new System.Drawing.Point(12, 15);
             this.labelTodaysClasses.Name = "labelTodaysClasses";
-            this.labelTodaysClasses.Size = new System.Drawing.Size(170, 25);
+            this.labelTodaysClasses.Size = new System.Drawing.Size(140, 21);
             this.labelTodaysClasses.TabIndex = 0;
             this.labelTodaysClasses.Text = "Today\'s Classes";
             // 
@@ -119,10 +107,10 @@
             this.labelSubtitle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelSubtitle.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.labelSubtitle.Location = new System.Drawing.Point(79, 108);
-            this.labelSubtitle.Margin = new System.Windows.Forms.Padding(69, 25, 0, 0);
+            this.labelSubtitle.Location = new System.Drawing.Point(59, 88);
+            this.labelSubtitle.Margin = new System.Windows.Forms.Padding(52, 20, 0, 0);
             this.labelSubtitle.Name = "labelSubtitle";
-            this.labelSubtitle.Size = new System.Drawing.Size(168, 25);
+            this.labelSubtitle.Size = new System.Drawing.Size(126, 20);
             this.labelSubtitle.TabIndex = 3;
             this.labelSubtitle.Text = "Automate Your Class";
             this.labelSubtitle.Click += new System.EventHandler(this.labelTitle_Click);
@@ -135,10 +123,10 @@
             this.labelTitle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelTitle.Font = new System.Drawing.Font("Century Gothic", 38F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.labelTitle.Location = new System.Drawing.Point(71, 37);
-            this.labelTitle.Margin = new System.Windows.Forms.Padding(67, 0, 67, 0);
+            this.labelTitle.Location = new System.Drawing.Point(53, 30);
+            this.labelTitle.Margin = new System.Windows.Forms.Padding(50, 0, 50, 0);
             this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(170, 78);
+            this.labelTitle.Size = new System.Drawing.Size(138, 62);
             this.labelTitle.TabIndex = 2;
             this.labelTitle.Text = "ASW";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -147,15 +135,14 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.panel3.Controls.Add(this.buttonAddStudent);
             this.panel3.Controls.Add(this.dataGridViewStudentList);
             this.panel3.Controls.Add(this.dataGridViewSln);
             this.panel3.Controls.Add(this.panelYourSections);
             this.panel3.Controls.Add(this.labelWelcome);
-            this.panel3.Location = new System.Drawing.Point(333, 0);
+            this.panel3.Location = new System.Drawing.Point(250, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(821, 628);
+            this.panel3.Size = new System.Drawing.Size(616, 510);
             this.panel3.TabIndex = 9;
             // 
             // dataGridViewStudentList
@@ -194,7 +181,7 @@
             this.dataGridViewStudentList.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewStudentList.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridViewStudentList.EnableHeadersVisualStyles = false;
-            this.dataGridViewStudentList.Location = new System.Drawing.Point(40, 170);
+            this.dataGridViewStudentList.Location = new System.Drawing.Point(30, 138);
             this.dataGridViewStudentList.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewStudentList.MultiSelect = false;
             this.dataGridViewStudentList.Name = "dataGridViewStudentList";
@@ -210,7 +197,7 @@
             this.dataGridViewStudentList.RowHeadersVisible = false;
             this.dataGridViewStudentList.RowHeadersWidth = 51;
             this.dataGridViewStudentList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStudentList.Size = new System.Drawing.Size(781, 458);
+            this.dataGridViewStudentList.Size = new System.Drawing.Size(586, 372);
             this.dataGridViewStudentList.StandardTab = true;
             this.dataGridViewStudentList.TabIndex = 10;
             this.dataGridViewStudentList.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewStudentList_CellEndEdit);
@@ -256,7 +243,7 @@
             this.dataGridViewSln.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewSln.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridViewSln.EnableHeadersVisualStyles = false;
-            this.dataGridViewSln.Location = new System.Drawing.Point(0, 170);
+            this.dataGridViewSln.Location = new System.Drawing.Point(0, 138);
             this.dataGridViewSln.Margin = new System.Windows.Forms.Padding(0);
             this.dataGridViewSln.MultiSelect = false;
             this.dataGridViewSln.Name = "dataGridViewSln";
@@ -273,7 +260,7 @@
             this.dataGridViewSln.RowHeadersWidth = 51;
             this.dataGridViewSln.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dataGridViewSln.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSln.Size = new System.Drawing.Size(40, 458);
+            this.dataGridViewSln.Size = new System.Drawing.Size(30, 372);
             this.dataGridViewSln.StandardTab = true;
             this.dataGridViewSln.TabIndex = 11;
             this.dataGridViewSln.SelectionChanged += new System.EventHandler(this.dataGridViewSln_SelectionChanged);
@@ -288,11 +275,88 @@
             this.panelYourSections.Controls.Add(this.buttonBack);
             this.panelYourSections.Controls.Add(this.labelStudents);
             this.panelYourSections.Controls.Add(this.buttonSearh);
-            this.panelYourSections.Location = new System.Drawing.Point(0, 78);
-            this.panelYourSections.Margin = new System.Windows.Forms.Padding(0, 25, 0, 0);
+            this.panelYourSections.Location = new System.Drawing.Point(0, 63);
+            this.panelYourSections.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.panelYourSections.Name = "panelYourSections";
-            this.panelYourSections.Size = new System.Drawing.Size(821, 92);
+            this.panelYourSections.Size = new System.Drawing.Size(616, 75);
             this.panelYourSections.TabIndex = 7;
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.textBoxSearch.Location = new System.Drawing.Point(461, 28);
+            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(144, 19);
+            this.textBoxSearch.TabIndex = 13;
+            this.textBoxSearch.Text = "Search";
+            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
+            this.textBoxSearch.Enter += new System.EventHandler(this.TextBoxSearch_Enter);
+            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
+            this.textBoxSearch.Leave += new System.EventHandler(this.TextBoxSearch_Leave);
+            // 
+            // panelSearchBG
+            // 
+            this.panelSearchBG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panelSearchBG.Location = new System.Drawing.Point(453, 22);
+            this.panelSearchBG.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+            this.panelSearchBG.Name = "panelSearchBG";
+            this.panelSearchBG.Size = new System.Drawing.Size(152, 30);
+            this.panelSearchBG.TabIndex = 14;
+            // 
+            // labelStudents
+            // 
+            this.labelStudents.Font = new System.Drawing.Font("Arial", 14F);
+            this.labelStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.labelStudents.Location = new System.Drawing.Point(70, 10);
+            this.labelStudents.Name = "labelStudents";
+            this.labelStudents.Size = new System.Drawing.Size(293, 54);
+            this.labelStudents.TabIndex = 0;
+            this.labelStudents.Text = "Students";
+            this.labelStudents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // buttonSearh
+            // 
+            this.buttonSearh.Location = new System.Drawing.Point(500, 35);
+            this.buttonSearh.Name = "buttonSearh";
+            this.buttonSearh.Size = new System.Drawing.Size(5, 5);
+            this.buttonSearh.TabIndex = 0;
+            this.buttonSearh.Text = "button1";
+            this.buttonSearh.UseVisualStyleBackColor = true;
+            this.buttonSearh.Click += new System.EventHandler(this.ButtonSearch_Click);
+            // 
+            // labelWelcome
+            // 
+            this.labelWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelWelcome.Font = new System.Drawing.Font("Arial", 12F);
+            this.labelWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.labelWelcome.Location = new System.Drawing.Point(35, 16);
+            this.labelWelcome.Margin = new System.Windows.Forms.Padding(10, 10, 30, 0);
+            this.labelWelcome.Name = "labelWelcome";
+            this.labelWelcome.Size = new System.Drawing.Size(542, 33);
+            this.labelWelcome.TabIndex = 5;
+            this.labelWelcome.Text = "Faculty";
+            this.labelWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // toolTipInfo
+            // 
+            this.toolTipInfo.AutoPopDelay = 5000;
+            this.toolTipInfo.InitialDelay = 100;
+            this.toolTipInfo.ReshowDelay = 100;
+            this.toolTipInfo.ShowAlways = true;
+            // 
+            // flowTodaysClass
+            // 
+            this.flowTodaysClass.AutoScroll = true;
+            this.flowTodaysClass.Location = new System.Drawing.Point(0, 188);
+            this.flowTodaysClass.Margin = new System.Windows.Forms.Padding(0);
+            this.flowTodaysClass.Name = "flowTodaysClass";
+            this.flowTodaysClass.Size = new System.Drawing.Size(250, 322);
+            this.flowTodaysClass.TabIndex = 8;
             // 
             // buttonInfo
             // 
@@ -305,10 +369,10 @@
             this.buttonInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInfo.Font = new System.Drawing.Font("Arial", 10F);
             this.buttonInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.buttonInfo.Location = new System.Drawing.Point(499, 27);
-            this.buttonInfo.Margin = new System.Windows.Forms.Padding(73, 32, 0, 0);
+            this.buttonInfo.Location = new System.Drawing.Point(374, 22);
+            this.buttonInfo.Margin = new System.Windows.Forms.Padding(55, 26, 0, 0);
             this.buttonInfo.Name = "buttonInfo";
-            this.buttonInfo.Size = new System.Drawing.Size(35, 34);
+            this.buttonInfo.Size = new System.Drawing.Size(26, 28);
             this.buttonInfo.TabIndex = 15;
             this.buttonInfo.UseVisualStyleBackColor = false;
             this.buttonInfo.MouseHover += new System.EventHandler(this.ButtonInfo_MouseHover);
@@ -324,39 +388,13 @@
             this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRefresh.Font = new System.Drawing.Font("Arial", 10F);
             this.buttonRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.buttonRefresh.Location = new System.Drawing.Point(551, 27);
-            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(73, 32, 0, 0);
+            this.buttonRefresh.Location = new System.Drawing.Point(413, 22);
+            this.buttonRefresh.Margin = new System.Windows.Forms.Padding(55, 26, 0, 0);
             this.buttonRefresh.Name = "buttonRefresh";
-            this.buttonRefresh.Size = new System.Drawing.Size(35, 34);
+            this.buttonRefresh.Size = new System.Drawing.Size(26, 28);
             this.buttonRefresh.TabIndex = 12;
             this.buttonRefresh.UseVisualStyleBackColor = false;
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
-            // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.textBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSearch.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
-            this.textBoxSearch.Location = new System.Drawing.Point(615, 34);
-            this.textBoxSearch.Margin = new System.Windows.Forms.Padding(11, 0, 0, 0);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(192, 23);
-            this.textBoxSearch.TabIndex = 13;
-            this.textBoxSearch.Text = "Search";
-            this.textBoxSearch.TextChanged += new System.EventHandler(this.textBoxSearch_TextChanged);
-            this.textBoxSearch.Enter += new System.EventHandler(this.TextBoxSearch_Enter);
-            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxSearch_KeyDown);
-            this.textBoxSearch.Leave += new System.EventHandler(this.TextBoxSearch_Leave);
-            // 
-            // panelSearchBG
-            // 
-            this.panelSearchBG.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panelSearchBG.Location = new System.Drawing.Point(604, 27);
-            this.panelSearchBG.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.panelSearchBG.Name = "panelSearchBG";
-            this.panelSearchBG.Size = new System.Drawing.Size(203, 37);
-            this.panelSearchBG.TabIndex = 14;
             // 
             // buttonBack
             // 
@@ -365,85 +403,22 @@
             this.buttonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBack.Image = global::GUI.Properties.Resources.back;
             this.buttonBack.Location = new System.Drawing.Point(0, 0);
-            this.buttonBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(100, 92);
+            this.buttonBack.Size = new System.Drawing.Size(75, 75);
             this.buttonBack.TabIndex = 1;
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
-            // labelStudents
-            // 
-            this.labelStudents.Font = new System.Drawing.Font("Arial", 14F);
-            this.labelStudents.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.labelStudents.Location = new System.Drawing.Point(93, 12);
-            this.labelStudents.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelStudents.Name = "labelStudents";
-            this.labelStudents.Size = new System.Drawing.Size(391, 66);
-            this.labelStudents.TabIndex = 0;
-            this.labelStudents.Text = "Students";
-            this.labelStudents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // buttonSearh
-            // 
-            this.buttonSearh.Location = new System.Drawing.Point(667, 43);
-            this.buttonSearh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonSearh.Name = "buttonSearh";
-            this.buttonSearh.Size = new System.Drawing.Size(7, 6);
-            this.buttonSearh.TabIndex = 0;
-            this.buttonSearh.Text = "button1";
-            this.buttonSearh.UseVisualStyleBackColor = true;
-            this.buttonSearh.Click += new System.EventHandler(this.ButtonSearch_Click);
-            // 
-            // labelWelcome
-            // 
-            this.labelWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelWelcome.Font = new System.Drawing.Font("Arial", 12F);
-            this.labelWelcome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.labelWelcome.Location = new System.Drawing.Point(47, 20);
-            this.labelWelcome.Margin = new System.Windows.Forms.Padding(13, 12, 40, 0);
-            this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(723, 41);
-            this.labelWelcome.TabIndex = 5;
-            this.labelWelcome.Text = "Faculty";
-            this.labelWelcome.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // toolTipInfo
-            // 
-            this.toolTipInfo.AutoPopDelay = 5000;
-            this.toolTipInfo.InitialDelay = 100;
-            this.toolTipInfo.ReshowDelay = 100;
-            this.toolTipInfo.ShowAlways = true;
-            // 
-            // buttonAddStudent
-            // 
-            this.buttonAddStudent.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.buttonAddStudent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(76)))), ((int)(((byte)(83)))));
-            this.buttonAddStudent.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonAddStudent.FlatAppearance.BorderSize = 0;
-            this.buttonAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAddStudent.Font = new System.Drawing.Font("Arial", 10F);
-            this.buttonAddStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.buttonAddStudent.Location = new System.Drawing.Point(646, 563);
-            this.buttonAddStudent.Margin = new System.Windows.Forms.Padding(73, 32, 0, 0);
-            this.buttonAddStudent.Name = "buttonAddStudent";
-            this.buttonAddStudent.Size = new System.Drawing.Size(143, 41);
-            this.buttonAddStudent.TabIndex = 12;
-            this.buttonAddStudent.Text = "Add Student";
-            this.buttonAddStudent.UseVisualStyleBackColor = false;
-            this.buttonAddStudent.Click += new System.EventHandler(this.ButtonAddStudent_Click_1);
-            // 
             // FormStudentList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(59)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(1152, 629);
+            this.ClientSize = new System.Drawing.Size(864, 511);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "FormStudentList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -483,6 +458,5 @@
         public System.Windows.Forms.Button buttonInfo;
         private System.Windows.Forms.ToolTip toolTipInfo;
         private System.Windows.Forms.FlowLayoutPanel flowTodaysClass;
-        private System.Windows.Forms.Button buttonAddStudent;
     }
 }
