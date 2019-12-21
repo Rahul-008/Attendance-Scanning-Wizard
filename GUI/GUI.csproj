@@ -166,6 +166,12 @@
     <Compile Include="Views\QRdisplayForm.Designer.cs">
       <DependentUpon>QRdisplayForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SearchForm.Designer.cs">
+      <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\StudentListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\QRdisplayForm.resx">
       <DependentUpon>QRdisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SearchForm.resx">
+      <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StudentListForm.resx">
       <DependentUpon>StudentListForm.cs</DependentUpon>
