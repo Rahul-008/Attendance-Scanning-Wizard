@@ -117,38 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="envelopeDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\envelopeDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="envelopeLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\envelopeLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="info" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\info.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="padlockDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\padlockDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="padlockLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\padlockLight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="qr" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\qr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFAAAABaCAYAAAAvitHLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EgAACxIB0t1+/AAAAY9JREFUeF7t2bFt22AYBmGPkFE8gkfxCBkhI2QEj+IuKVKk1RYeIADzEVBhGFcc
+        QouSmCue5vQ3fAVKAvWwLEs2wBgPYzyM8TDGwxgPYzyM8TDGwxgPYzyM8TDGwxgPYzyM8TDGwxgPYzyM
+        8TDGwxgPYzyM8TDGwxgPYzyM8TDGwxgPYzyM8TDGwxgP47WcTqcv4/d4pddvEcZrmNEex9tYxnc6c4sw
+        7u3DeC905lZh3NM9j7fCuJcZ7OndeF/pzK3DuIcZ7Pk83OqZztwDjJd2lPFWGC/pSOOtMF7KDPbtPNz6
+        ufdIZ+4NxkuYwV6ONt4K42ebwX6ex/szfo3XHezyJmH8bHMxP0YDbjEX1C281QzXl8hWM1w/Y7Y60ogY
+        93CUETHuZYbrYcJWM1yPs7a65xExXsOHEXuk/y9muP5U+t9gjIcxHsZ4GONhjIcxHsZ4GONhjIcxHsZ4
+        GONhjIcxHsZ4GONhjIcxHsZ4GONhjIcxHsZ4GONhjIcxHsZ4GONhjIcxHsZ4GONhjLU8/AWKCzQeAg1q
+        LgAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

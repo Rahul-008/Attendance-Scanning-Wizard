@@ -65,7 +65,7 @@ namespace DataAccessLayer
 
         public List<ClassModel> GetByDateAndFacultyId(string date, int FacultyId)
         {
-            using (IDbConnection conn = SQLiteDBConnection.Get())
+            using(IDbConnection conn = SQLiteDBConnection.Get())
             {
                 //Console.WriteLine("date in query: " + date);
                 var query = @"SELECT * from Classes where ClassDate = @date AND Id IN
@@ -78,7 +78,7 @@ namespace DataAccessLayer
             }
         }
 
-        public void DeleteAllBySection(int SectionId)
+        public void DeleteAllBySection (int SectionId)
         {
             using (IDbConnection conn = SQLiteDBConnection.Get())
             {
@@ -86,6 +86,42 @@ namespace DataAccessLayer
                 var parameters = new DynamicParameters();
                 parameters.Add("@SectionId", SectionId);
                 conn.Execute(query, parameters);
+            }
+        }
+
+        public ClassModel InsertQRCode (int ClassId, string QR)
+        {
+            using(IDbConnection conn = SQLiteDBConnection.Get())
+            {
+                var query = @"UPDATE Classes SET QRCode = @QR WHERE Id = @ClassId;";
+                var parameters = new DynamicParameters();
+                parameters.Add("@ClassId", ClassId);
+                parameters.Add("@QR", QR);
+                return conn.ExecuteScalar<ClassModel>(query, parameters);
+            }
+        }
+
+        public ClassModel InsertQRDisplayStartTime(int ClassId, string StartTime)
+        {
+            using(IDbConnection conn = SQLiteDBConnection.Get())
+            {
+                var query = @"UPDATE Classes SET QRDisplayStartTime = @StartTime where Id = @ClassId;";
+                var parameters = new DynamicParameters();
+                parameters.Add("@ClassId", ClassId);
+                parameters.Add("@StartTime", StartTime);
+                return conn.ExecuteScalar<ClassModel>(query, parameters);
+            }
+        }
+
+        public ClassModel InsertQRDisplayEndTime(int ClassId, string EndTime)
+        {
+            using (IDbConnection conn = SQLiteDBConnection.Get())
+            {
+                var query = @"UPDATE Classes SET QRDisplayEndTime = @EndTime where Id = @ClassId;";
+                var parameters = new DynamicParameters();
+                parameters.Add("@ClassId", ClassId);
+                parameters.Add("@EndTime", EndTime);
+                return conn.ExecuteScalar<ClassModel>(query, parameters);
             }
         }
     }

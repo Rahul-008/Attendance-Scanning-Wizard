@@ -1,7 +1,9 @@
-﻿using DataLayer.Models.UserModels;
+﻿using DataLayer.Models;
+using DataLayer.Models.UserModels;
 using GUI.Controllers;
 using GUI.Utils;
 using System;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -30,7 +32,6 @@ namespace GUI.Views
                 loadingForm.Step(20);
                 var controller = new UserController();
                 Argon2Hashing hashing = new Argon2Hashing();
-
                 try
                 {
                     FacultyUserModel faculty = controller.GetByEmail(textBoxEmail.Text);
@@ -41,12 +42,14 @@ namespace GUI.Views
                     }
                     else
                     {
+                        //Console.WriteLine("Got hash: " + faculty.Password);
+                        //Console.WriteLine("Got salt: " + faculty.salt);
+                        //Console.WriteLine("Verification: " + hashing.VerifyHash(textBoxPassword.Text, Convert.FromBase64String(faculty.salt), Convert.FromBase64String(faculty.Password)));
                         loadingForm.Step(20);
                         if (hashing.VerifyHash(textBoxPassword.Text, Convert.FromBase64String(faculty.salt), Convert.FromBase64String(faculty.Password)))
                         {
                             loadingForm.Step(60);
                             loadingForm.Close();
-
                             var dash = new FormDashboard(faculty);
                             dash.FormClosed += new FormClosedEventHandler(dash_FormClosed);
                             dash.Show();
@@ -57,8 +60,7 @@ namespace GUI.Views
                             MessageBox.Show("Incorrect email or password. Please try again");
                         }
                     }
-                }
-                catch(Exception ex)
+                }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
@@ -315,7 +317,7 @@ namespace GUI.Views
                     faculty.Email = textBoxEmailSignup.Text.ToLower().Trim();
                     faculty.Password = textBoxPassSignUp.Text;
 
-                    //try
+                    try
                     {
                         faculty.IsValid();
                         loading.Step(20);
@@ -328,8 +330,8 @@ namespace GUI.Views
                         //Console.WriteLine("Salt: " + faculty.salt);
                         //Console.WriteLine("Hashed password: " + faculty.Password);
                         //Console.WriteLine("Verify hash: " + hashing.VerifyHash(textBoxPassSignUp.Text, Convert.FromBase64String(faculty.salt), Convert.FromBase64String(faculty.Password)));
-                        
-                        //try
+                        loading.Step(20);
+                        try
                         {
                             var controller = new UserController();
                             controller.Create(faculty);
@@ -338,17 +340,28 @@ namespace GUI.Views
                             MessageBox.Show("Account created. Please login with your email and password");
                             buttonCancel.PerformClick();
                         }
-                        //catch(Exception ex)
-                        //{
-                        //    loading.Close();
-                        //    MessageBox.Show(ex.Message);
-                        //}
+                        catch (SQLiteException ex)
+                        {
+                            loading.Close();
+                            if(ex.ErrorCode == 19)
+                            {
+                                MessageBox.Show("An account is already registered with this email or ID");
+                            }
+                            else
+                            {
+                                MessageBox.Show(ex.Message + ex.ErrorCode);
+                            }
+                        }catch(Exception ex)
+                        {
+                            loading.Close();
+                            MessageBox.Show(ex.Message);
+                        }
                     }
-                    //catch (Exception ex)
-                    //{
-                    //    loading.Close();
-                    //    MessageBox.Show(ex.Message);
-                    //}
+                    catch (Exception ex)
+                    {
+                        loading.Close();
+                        MessageBox.Show(ex.Message);
+                    }
                 }
                 else
                 {
@@ -448,11 +461,6 @@ namespace GUI.Views
         private void textBoxPassSignUp_MouseHover(object sender, EventArgs e)
         {
             toolTipPass.Show("Password minimum length is 6 and must contain at least one uppercase, lowercase and digit characters", textBoxPassSignUp, 5000);
-        }
-
-        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

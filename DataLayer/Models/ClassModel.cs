@@ -10,7 +10,7 @@ namespace DataLayer.Models
         public string ClassDate { set; get; }
         public int ClassTimed { set; get; }
         public int StartTimeId { set; get; }
-        public int EndTimeID { set; get; }
+        public int EndTimeId { set; get; }
         public ClassTypes ClassType { set; get; }
         public string RoomNo { set; get; }
         public string QRCode { set; get; }
@@ -28,11 +28,11 @@ namespace DataLayer.Models
             {
                 throw new Exception("Invaild class type");
             }
-            if (StartTimeId > EndTimeID)
+            if (StartTimeId > EndTimeId)
             {
                 throw new Exception("Starting time cannot be after ending time");
             }
-            if (EndTimeID - StartTimeId < 2)
+            if (EndTimeId - StartTimeId < 2)
             {
                 throw new Exception("Class length cannot be shorter than an hour");
             }

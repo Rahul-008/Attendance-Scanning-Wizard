@@ -447,7 +447,7 @@ namespace GUI.Views
             this.MinimumSize = new System.Drawing.Size(878, 547);
             this.Name = "FormDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dashboard";
+            this.Text = "q";
             this.Load += new System.EventHandler(this.FormDashboard_Load);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
