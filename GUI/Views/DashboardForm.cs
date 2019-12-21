@@ -1,5 +1,4 @@
 ﻿using DataLayer.Models;
-using DataLayer.Models.BaseModels;
 using DataLayer.Models.UserModels;
 using GUI.Controllers;
 using GUI.Properties;
@@ -68,7 +67,7 @@ namespace GUI.Views
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void LabelWelcome_Click(object sender, EventArgs e)
