@@ -71,12 +71,15 @@ namespace GUI.Views
 
         private void ButtonSearch_Click(object sender, EventArgs e)
         {
-            
+            var search = new SearchForm(faculty);
+            search.FormClosed += new FormClosedEventHandler(dash_FormClosed);
+            search.Show();
+            this.Hide();
         }
 
         private void LabelWelcome_Click(object sender, EventArgs e)
         {
-           
+            
         }
 
         private void FormDashboard_Load(object sender, EventArgs e)

@@ -247,6 +247,7 @@
             this.buttonSearch.Size = new System.Drawing.Size(75, 74);
             this.buttonSearch.TabIndex = 4;
             this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // textBoxSearch
             // 
@@ -261,6 +262,7 @@
             this.textBoxSearch.Text = "Search";
             this.textBoxSearch.Click += new System.EventHandler(this.TextBoxSearch_Click);
             this.textBoxSearch.Enter += new System.EventHandler(this.TextBoxSearch_Click);
+            this.textBoxSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearch_KeyDown);
             this.textBoxSearch.Leave += new System.EventHandler(this.TextBoxSearch_Leave);
             // 
             // buttonBack
@@ -343,6 +345,7 @@
             this.dataGridViewStudentList.Size = new System.Drawing.Size(582, 372);
             this.dataGridViewStudentList.StandardTab = true;
             this.dataGridViewStudentList.TabIndex = 13;
+            this.dataGridViewStudentList.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dataGridViewStudentList_Scroll);
             // 
             // AcademicID
             // 
