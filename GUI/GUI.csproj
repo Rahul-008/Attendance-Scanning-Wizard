@@ -124,6 +124,12 @@
     <Compile Include="Views\AllClassesForm.Designer.cs">
       <DependentUpon>AllClassesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateManualFrom.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,12 @@
     </Compile>
     <Compile Include="Views\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ProfileForm.Designer.cs">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\QRdisplayForm.cs">
       <SubType>Form</SubType>
@@ -229,6 +241,9 @@
     <EmbeddedResource Include="Views\AllClassesForm.resx">
       <DependentUpon>AllClassesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\CreateManualFrom.resx">
       <DependentUpon>CreateManualFrom.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ProfileForm.resx">
+      <DependentUpon>ProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\QRdisplayForm.resx">
       <DependentUpon>QRdisplayForm.cs</DependentUpon>
